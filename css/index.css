@@ -122,6 +122,16 @@ header .utils ul li a:last-child {
 	height: 230px;
 }
 
+.menu nav:hover::after {
+	position: absolute;
+	content: "";
+	top: 56px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #DADADA;
+}
+
 .menu li .sub {
 	padding-top: 10px;
 	padding-left: 55px;
@@ -135,6 +145,7 @@ header .utils ul li a:last-child {
 
 .menu li .sub a:hover {
 	color: #000;
+	text-decoration: underline;
 }
 
 /* SLIDER */
@@ -187,8 +198,9 @@ section {
 	margin-top: 30px;
 }
 
-.banner1_1,
-.banner2_1 {
+.banner1_1 a,
+.banner2_1 a {
+	display: block;
 	overflow: hidden;
 }
 
