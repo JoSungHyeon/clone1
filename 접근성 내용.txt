@@ -1,0 +1,23 @@
+1. 상단 스킵 내비게이션
+
+
+
+2. 중요 컨텐츠 id로 변경
+
+<header id="header">
+<nav id="gnb">
+<section id="content">
+
+
+
+3. 파비콘 추가
+
+<link rel="shortcut icon" type="image/x-icon" href="http://static.wconcept.co.kr/favicon.ico" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="http://static.wconcept.co.kr/favicon.ico" sizes="16x16">
+
+
+
+4. 탭으로 콘텐츠 포커스
+
+.banner1:focus {
+}

@@ -21,6 +21,24 @@ body {
 	font-family: "Roboto", "Noto Sans KR", sans-serif;
 }
 
+/* skip navigation */
+.skip_nav a {
+	position: fixed; /* 자동으로 display: block;으로 바뀝니다. */
+	left: 0;
+	top: -9999px; /* 위로 멀리멀리 사라지게 처리합니다. */
+	z-index: 9999;
+	width: 100%; /* absolute, fixed는 block이라도 가로 크기를 갖기 못합니다. */
+	line-height: 40px; /* 정확한 세로 부피를 만듭니다. */
+	text-align: center; /* 일반적으로 스킵 네비게이션은 중앙 정렬입니다. */
+	font-size: 0.875em;
+	background-color: #385170; /* 주조 첫 번째 색을 일반적으로 사용합니다. */
+	color: #fff;
+}
+
+.skip_nav a:focus { /* :hover는 마우스 올리는거고, :focus는 탭입니다. */
+	top: 0;
+}
+
 /* HEADER */
 header {
 	display: flex;
