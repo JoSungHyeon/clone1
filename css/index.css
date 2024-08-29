@@ -45,11 +45,20 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 auto;
-	width: 1020px;
+	max-width: 1020px;
 	height: 105px;
 	background-color: #fff;
 	box-sizing: border-box;
 }
+
+
+
+@media only screen and (max-width: 640px) {
+	#header .social-wrapper {
+		display: none;
+	}
+}
+
 
 header .social-wrapper {
 	display: flex;
@@ -83,6 +92,8 @@ header .utils ul li a:last-child {
 
 /* MENU */
 .menu {
+	min-width: 1020px;
+	margin: 0 auto;
 	position: relative;
 }
 
@@ -102,6 +113,19 @@ header .utils ul li a:last-child {
 .menu nav > ul {
 	display: flex;
 	justify-content: center;
+}
+
+@media only screen and (max-width: 1020px) {
+	.menu {
+		min-width: auto;
+		max-width: 1020px;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.menu {
+		display: none;
+	}
 }
 
 
@@ -150,11 +174,25 @@ header .utils ul li a:last-child {
 
 /* SLIDER */
 .slider {
+	min-width: 1020px;
 	position: relative;
 	z-index: 1;
 	background-color: #999;
 	height: 420px;
 	margin-top: 55px;
+}
+
+@media only screen and (max-width: 1020px) {
+	.slider {
+		max-width: 1020px;
+		min-width: auto;
+	}
+}
+
+@media only screen and (max-width: 1020px) {
+	.slider {
+		margin-top: 0;
+	}
 }
 
 .slider img {
@@ -182,20 +220,49 @@ header .utils ul li a:last-child {
 
 section {
 	margin: 0 auto;
-	padding: 60px 0 70px 0;
-	width: 1020px;
+	padding: 45px 0 55px 0;
+	max-width: 1020px;
+	/* width: 1020px; */
 }
 
 /* BANNER1, 2 */
 .banner1,
 .banner2 {
+	/* margin: 0 auto; */
+	padding: 15px 0;
 	display: flex;
-	gap: 30px;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .banner2 {
 	flex-direction: row-reverse;
-	margin-top: 30px;
+	/* margin-top: 30px; */
+}
+
+/* .banner1_1,
+.banner2_1 {
+	width: 690px;
+} */
+
+/* .banner1_2,
+.banner2_2 {
+	width: calc(100% - 720px);
+} */
+
+@media only screen and (max-width: 1020px) {
+	.banner1,
+	.banner2 {
+		padding: 15px 20px;
+		justify-content: center;
+		flex-direction: row;
+		gap: 30px;
+	}
+
+	.banner1 .banner1_2, .banner2 .banner2_2,
+	.banner1 .banner1_2 a, .banner2 .banner2_2 a {
+		min-width: 100%;
+	}
 }
 
 .banner1_1 a,
@@ -265,9 +332,13 @@ section {
 
 /* BANNER3 */
 .banner3 {
-	margin-top: 30px;
+	max-width: 1020px;
+	padding: 15px 0;
 	display: flex;
-	gap: 30px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	/* gap: 30px; */
+	
 }
 
 .banner3_left,
@@ -280,6 +351,46 @@ section {
 .banner3_right {
 	flex-direction: column-reverse;
 }
+
+@media only screen and (max-width: 1020px) {
+	.banner3 {
+		padding: 15px 20px;
+		justify-content: center;
+		flex-direction: row;
+		gap: 30px;
+	}
+
+	.banner3_right {
+		flex-direction: column;
+	}
+
+	.banner3_left, .banner3_right {
+		max-width: 100%;
+	}
+
+	.banner3_left_bottom a, .banner3_right_bottom a {
+		max-width: 495px;
+		background: url(../images/new.png) no-repeat;
+		background-size: cover;
+		background-position: 50%;
+	}
+	
+}
+
+@media only screen and (max-width: 640px) {
+	.banner3_left, .banner3_right {
+		max-width: 100%;
+	}
+
+	.banner3_left_bottom a, .banner3_right_bottom a {
+		max-width: 100%;
+		background: url(../images/new.png) no-repeat;
+		background-size: cover;
+		background-position: 50%;
+	}
+	
+}
+
 
 .banner3_left_top {
 	background: url(../images/heich.jpg) no-repeat;
@@ -298,7 +409,7 @@ section {
 	gap: 25px;
 	padding-left: 30px;
 	padding-bottom: 55px;
-	width: 495px;
+	max-width: 495px;
 	height: 570px;
 	box-sizing: border-box;
 	color: #fff;
@@ -420,21 +531,31 @@ section {
 
 /* FOOTER */
 footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 30px;
 	background-color: #333;
 	width: 100%;
 	padding: 60px 165px;
 	box-sizing: border-box;
 }
 
+footer .footer_inner {
+	max-width: 1020px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
 footer .navi-wrap {
 	display: flex;
 	align-items: center;
 	gap: 17px;
+}
+
+@media only screen and (max-width: 1020px) {
+	footer .navi-wrap {
+		flex-direction: column;
+	}
 }
 
 footer .navi-wrap .navi-map {
