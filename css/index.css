@@ -180,6 +180,52 @@ header .utils ul li a:last-child {
 	background-color: #999;
 	height: 420px;
 	margin-top: 55px;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	position: relative;
+	left: 0;
+	height: 100%;
+	transition: left 0.3s;
+}
+
+.slider ul li {
+	flex: 100% 0 0;
+}
+
+.slider ul li a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.slider_btn_wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+
+
+.slider .slider_btn_wrap a.left-btn {
+	left: 20px;
+	width: 45px;
+	height: 90px;
+}
+
+.slider .slider_btn_wrap a.right-btn {
+	right: 20px;
+	width: 45px;
+	height: 90px;
 }
 
 @media only screen and (max-width: 1020px) {
@@ -201,22 +247,7 @@ header .utils ul li a:last-child {
 	object-fit: cover; /* 이미지를 꽉 채우는 속성값입니다. */
 }
 
-.slider a {
-	position: absolute;
-	/* display: block; */
-	width: 44px;
-	height: 86px;
-	top: 50%;
-	transform: translateY(-50%);
-}
 
-.slider a.left-btn {
-	left: 20px;
-}
-
-.slider a.right-btn {
-	right: 20px;
-}
 
 section {
 	margin: 0 auto;
@@ -539,6 +570,7 @@ footer {
 
 footer .footer_inner {
 	max-width: 1020px;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

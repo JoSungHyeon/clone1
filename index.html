@@ -10,6 +10,35 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" sizes="16x16">
 <!-- CSS -->
 <link rel="stylesheet" href="css/index.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	$(function() {
+		let n = 0
+		$(".left-btn").click(function(e) {
+				e.preventDefault();
+
+				if(n > 0) {
+					n--; 
+				} else {
+					n = 3;
+				}
+
+				$(".slider ul").css({left : n * -1 * 100 + "%"});
+		});
+
+		$(".right-btn").click(function(e) {
+				e.preventDefault();
+
+				if(n < 3) {
+					n++; 
+				} else {
+					n = 0;
+				}
+
+				$(".slider ul").css({left : n * -1 * 100 + "%"});
+		})
+	})	
+</script>
 </head>
 <body>
 <div class="wrapper">
@@ -101,9 +130,17 @@
 	</div>
 	<!-- SLIDER -->
 	<div class="slider">
-		<img src="images/key1.jpg" alt="key1">
-		<a href="" class="left-btn"><img src="images/btn_left.png" alt="leftBtn"></a>
-		<a href="" class="right-btn"><img src="images/btn_right.png" alt="rightBtn"></a>
+		<ul>
+			<li><a href=""><img src="images/key1.jpg" alt="key1"></a></li>
+			<li><a href=""><img src="images/key2.jpg" alt="key2"></a></li>
+			<li><a href=""><img src="images/key3.jpg" alt="key3"></a></li>
+			<li><a href=""><img src="images/key4.jpg" alt="key4"></a></li>
+		</ul>
+		<div class="slider_btn_wrap">
+			<a href="" class="left-btn"><img src="images/btn_left.png" alt="leftBtn"></a>
+			<a href="" class="right-btn"><img src="images/btn_right.png" alt="rightBtn"></a>
+		</div>
+		
 	</div>
 	<!-- SECTION -->
 	<section id="content">
