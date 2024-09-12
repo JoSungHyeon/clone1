@@ -138,11 +138,12 @@ header .utils ul li a:last-child {
 	font-size: 14px;
 }
 
-.menu nav > ul > li > a:hover {
+.menu nav > ul > li.active > a,
+.menu nav > ul > li.active > a {
 	color: #B5252E;
 }
 
-.menu nav:hover {
+.menu nav.active {
 	height: 230px;
 }
 
@@ -167,6 +168,7 @@ header .utils ul li a:last-child {
 	color: #999;
 }
 
+.menu li .sub a:focus,
 .menu li .sub a:hover {
 	color: #000;
 	text-decoration: underline;

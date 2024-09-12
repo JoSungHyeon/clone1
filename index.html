@@ -36,8 +36,35 @@
 				}
 
 				$(".slider ul").css({left : n * -1 * 100 + "%"});
-		})
-	})	
+		});
+
+		$("nav > ul > li").hover(
+			function() {
+				$("nav").addClass("active");
+			},
+			function() {
+				$("nav").removeClass("active");
+			}
+		);
+
+		$("nav > ul > li > a").focusin(function() {
+			if($(this).parent().index() == 0) {
+				$("nav").addClass("active");
+			}
+
+			$(this).parent().addClass("active");
+		});
+
+		let total = $("nav > ul > li").length;
+
+		$("nav li li:last-child > a").focusout(function() {
+			if($(this).parent().parent().parent().index() == total - 1) {
+				$("nav").removeClass("active");
+			}
+
+			$(this).parent().parent().parent().removeClass("active");
+		});
+	});
 </script>
 </head>
 <body>
