@@ -6,11 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" sizes="16x16">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" sizes="16x16">
 <!-- CSS -->
 <link rel="stylesheet" href="css/index.css">
 <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
 	$(function() {
 		let n = 0
@@ -63,6 +65,22 @@
 			}
 
 			$(this).parent().parent().parent().removeClass("active");
+		});
+
+		const mainSwiper = new Swiper(".mainSwiper", {
+			navigation: {
+    	    	nextEl: ".mainSwiper .swiper-button-next",
+	    	    prevEl: ".mainSwiper .swiper-button-prev",
+      		},
+		});
+
+		$(".slider .prev").click(function(e){ // added
+			e.preventDefault();
+			mainSwiper.slidePrev();
+		});
+		$(".slider .next").click(function(e){ // added
+			e.preventDefault();
+			mainSwiper.slideNext();
 		});
 	});
 </script>
@@ -157,12 +175,30 @@
 	</div>
 	<!-- SLIDER -->
 	<div class="slider">
-		<ul>
+		<div class="swiper-container mainSwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="images/key1.jpg" alt="key1">
+				</div>
+				<div class="swiper-slide">
+					<img src="images/key2.jpg" alt="key2">
+				</div>
+				<div class="swiper-slide">
+					<img src="images/key3.jpg" alt="key3">
+				</div>
+				<div class="swiper-slide">
+					<img src="images/key4.jpg" alt="key4">
+				</div>
+			</div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+		<!-- <ul>
 			<li><img src="images/key1.jpg" alt="key1"></li>
 			<li><img src="images/key2.jpg" alt="key2"></li>
 			<li><img src="images/key3.jpg" alt="key3"></li>
 			<li><img src="images/key4.jpg" alt="key4"></li>
-		</ul>
+		</ul> -->
 		<div class="slider_btn_wrap">
 			<a href="" class="left-btn"><img src="images/btn_left.png" alt="leftBtn"></a>
 			<a href="" class="right-btn"><img src="images/btn_right.png" alt="rightBtn"></a>
